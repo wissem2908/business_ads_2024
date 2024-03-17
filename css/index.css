@@ -1,0 +1,124 @@
+.latest_ads{
+ 
+    padding: 32px;
+    background-color: #fff;
+    box-shadow: var(--shadow);
+}
+#share_div{
+    margin-top: 10px;
+    text-align: center;
+}
+.share_link{
+    position: relative;
+   /*  position: absolute;
+    top:72px;
+    left:0px;
+   
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    cursor: pointer;*/
+} 
+.share_link_ad{
+    position: absolute;
+ 
+    left:0px;
+   bottom:0;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.share_link_ad .bookmark{
+    position: absolute;
+    /* bottom: 5px;
+    left: 61px; */
+    border-radius: 50%;
+    background-color: #fff;
+    padding: 9px;
+    cursor: pointer;
+    background-color: #ffdf00;
+    top: -39px;
+}
+
+ .bookmark{
+    position: relative;
+   /* top:6px;
+    left:6px;*/
+    border-radius: 50%;
+background-color: #fff;
+padding: 9px;
+cursor: pointer;
+background-color: #ffdf00;
+}
+.service{
+    position: relative;
+}
+
+.share_icons{
+border-radius: 50%;
+background-color: #fff;
+padding: 9px;
+cursor: pointer;
+background-color: #ffdf00;
+}
+.share_icons:hover{
+
+}
+.hide ul{
+    list-style-type: none;
+   padding:0;
+}
+
+.hide {
+    position: absolute;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    opacity: 0.9;
+    border-radius: 13px;
+    margin-top: 17px;
+    left: 162px;
+    /* width: 17%; */
+    z-index: 1000;
+
+}
+.share_link_ad .hide{
+    left: 32px;
+}
+.hide:after{
+    content: '';
+    position: absolute;
+    bottom: 34px;
+    left: 46%;
+    width: 0;
+    height: 0;
+    border: 15px solid transparent;
+ top:-15px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-bottom-style: solid;
+  border-bottom-width: 15px;
+  border-top-color: #ccc;
+  border-bottom: 0;
+  margin-bottom: -36px;
+  margin-left: -12px;
+  rotate: none;
+  transform: rotate(180deg);
+  
+}
+.hide p{
+    text-transform: uppercase;
+    margin-right:0px;
+    color:#fff;
+    opacity: 0.9;
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.hide ul li{
+    padding:0px 20px;
+    font-size: 24px;
+}

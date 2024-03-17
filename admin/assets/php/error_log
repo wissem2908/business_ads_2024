@@ -1,0 +1,30 @@
+[19-Dec-2022 21:16:58 UTC] PHP Warning:  unlink(../../logo_images/1671203147_IMG_1059.JPG): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_user.php on line 19
+[19-Dec-2022 21:17:02 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/delete_user.php on line 19
+[19-Dec-2022 21:17:08 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/delete_user.php on line 19
+[19-Dec-2022 21:17:14 UTC] PHP Warning:  unlink(../../logo_images/pic2.jpg): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_user.php on line 19
+[19-Dec-2022 21:17:27 UTC] PHP Warning:  unlink(../../blog_images/1669814895_1669107169_2.jpg): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_blog.php on line 15
+[19-Dec-2022 21:17:31 UTC] PHP Warning:  unlink(../../blog_images/1669812098_1668420755_pic1.jpg): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_blog.php on line 15
+[19-Dec-2022 21:17:37 UTC] PHP Warning:  unlink(../../blog_images/1669814857_1669113721_vaude-big-pro-bike-travel-bag.jpg): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_blog.php on line 15
+[19-Dec-2022 21:17:41 UTC] PHP Warning:  unlink(../../blog_images/1669814784_1668515193_work1.jpg): No such file or directory in /home/adscomau/public_html/admin/assets/php/delete_blog.php on line 15
+[24-Dec-2022 13:17:14 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/delete_user.php on line 19
+[05-Apr-2023 15:10:06 UTC] PHP Warning:  unlink(../../ads_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/delete_ad.php on line 19
+[06-Apr-2023 10:18:19 UTC] PHP Warning:  unlink(../../ads_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/edit_ads.php on line 35
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 3
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(includes/header.php): failed to open stream: No such file or directory in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 3
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(): Failed opening 'includes/header.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 3
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 126
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(includes/footer.php): failed to open stream: No such file or directory in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 126
+[08-Apr-2023 20:08:51 UTC] PHP Warning:  include(): Failed opening 'includes/footer.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/adscomau/public_html/admin/assets/php/add_ads.php on line 126
+[12-Apr-2023 11:53:37 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function smtp_mailer() in /home/adscomau/public_html/admin/assets/php/change_pass.php:71
+Stack trace:
+#0 {main}
+  thrown in /home/adscomau/public_html/admin/assets/php/change_pass.php on line 71
+[12-Apr-2023 11:53:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function smtp_mailer() in /home/adscomau/public_html/admin/assets/php/change_pass.php:71
+Stack trace:
+#0 {main}
+  thrown in /home/adscomau/public_html/admin/assets/php/change_pass.php on line 71
+[12-Apr-2023 12:00:36 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function smtp_mailer() in /home/adscomau/public_html/admin/assets/php/change_pass.php:71
+Stack trace:
+#0 {main}
+  thrown in /home/adscomau/public_html/admin/assets/php/change_pass.php on line 71
+[14-Apr-2023 11:44:33 UTC] PHP Warning:  unlink(../../blog_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/edit_blog.php on line 22

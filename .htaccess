@@ -1,0 +1,12 @@
+RewriteEngine On
+php_flag output_buffering on
+
+RewriteRule ^([A-Za-z0-9!-]+)/([A-Za-z0-9/_!-]+)/([A-Za-z0-9/_!-]+)/([A-Za-z0-9!-]+)/?$ ads_details.php?username=$1&ad_title=$2&category=$3&id_ad=$4 [L]
+
+
+
+RewriteRule ^admin/?$ admin/index.php
+RewriteRule ^.{0}$ index.php
+RewriteRule ^([A-Za-z0-9]+)/?$ advertisement.php?username=$1 [L]
+
+
