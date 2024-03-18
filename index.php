@@ -83,3 +83,27 @@ include ('includes/footer_1.php');
     });
     })
 </script>
+
+
+
+
+
+
+<script>
+
+$(document).ready(function(){
+   
+
+
+$.ajax({
+    url:'assets/php/check_expiration_date.php',
+    method:'post',
+    async:false,
+    success:function(response){
+        console.log(response)
+    }
+})
+
+    })
+
+</script>

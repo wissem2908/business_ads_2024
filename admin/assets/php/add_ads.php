@@ -75,7 +75,7 @@ $keyword=$_POST['all_tags_input'];
             $bdd = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME."; charset=utf8", DB_USER, DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
 
-            $req= $bdd->prepare('INSERT INTO `ads`( `user_id`, `ad_title`, `category_id`, `general_cat`, `suub_cat`, `ad_description`,  `state`, `cities`, `city_area`, `address_ad`, `status`, `lat`, `lon`,keyword, `creation_date`)VALUES(?,?,?,?,?,?,?,?,?,?,"active",?,?,?,NOW())');
+            $req= $bdd->prepare('INSERT INTO `ads`( `user_id`, `ad_title`, `category_id`, `general_cat`, `suub_cat`, `ad_description`,  `state`, `cities`, `city_area`, `address_ad`, `status`, `lat`, `lon`,keyword, `creation_date`,activation_date)VALUES(?,?,?,?,?,?,?,?,?,?,"active",?,?,?,NOW(),NOW())');
             $req->execute(array(
             	$user_id,
             	$ad_title,
