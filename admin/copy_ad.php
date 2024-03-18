@@ -42,26 +42,26 @@ $user_id=$_GET['user_id'];
                                         <div class="mb-3 col-lg-6 col-md-12">
                                         <label class="form-label">My Category <span class="text-danger required"  >*required</span></label>
                                            <select class="form-control input-default " name="categories" id="categories" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
-                                            <option></option>
+                                            <option value="" selected>Select...</option>
                                            </select>
                                         </div>
 
                                         <div class="mb-3 col-lg-6 col-md-12">
                                         <label class="form-label">General Category <span class="text-danger required" >*required</span></label>
                                            <select class="form-control input-default " name="general_cat" id="general_cat" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
-                                            <option></option>
+                                            <option value="" selected>Select...</option>
                                            </select>
                                         </div>
                                         <div class="mb-3 col-lg-6 col-md-12">
                                         <label class="form-label">Sub Category <span class="text-danger required" >*required</span></label>
                                            <select class="form-control input-default " name="sub_categories" id="sub_categories" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
-                                            <option></option>
+                                            <option value="" selected>Select...</option>
                                            </select>
                                         </div>
                                       <div class="mb-3 col-lg-6 col-md-12">
                                       <label class="form-label">State<span class="text-danger required" > *required</span></label>
                                            <select class="form-control input-default " name="state" id="state" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
-                                                <option></option>
+                                            <option value="" selected>Select...</option>
                                                 <option value="ACT">Australian Capital Territory</option>
                                                 <option value="NSW">New South Wales</option>
                                                 <option value="NT">Northern Territory</option>
@@ -79,7 +79,7 @@ $user_id=$_GET['user_id'];
 "><i> (optional)</i></span> </label>
                                            <select class="form-control input-default " name="city" id="city" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
                                                 
-                                                
+                                            <option value="" selected>Select...</option>
                                            </select>
                                         </div> 
                                         <div class="mb-3 col-lg-12 col-md-12">
@@ -119,17 +119,20 @@ $user_id=$_GET['user_id'];
 <input id="longitude-input" type="hidden" name="longitude" />
                                         </div> -->
                                        <div class="col-lg-12">
+                                       <label>Description <span class="text-danger required">*required</span></label>
                                           <textarea name="ad_desc"  id="ad_desc">
      
     </textarea>
                                        </div>
                                     
                                       
-                                       <div class="mb-3 col-lg-2 col-sm-6 col-md-8">
+                                       <!-- <div class="mb-3 col-lg-2 col-sm-6 col-md-8">
                                        <br>
+                                       
+                                       <div id="image_container">
                                        <p id="no_image"><span   class="btn btn-warning shadow btn-xs sharp" data-bs-toggle="tooltip" data-bs-placement="top" title="No image"><i class="fas fa-info"></i> </span> No image</p>
-                              <img id="image_ad" class="rounded" width="100px" height="100px"/>
-                                        </div>
+                              <img id="image_ad" class="rounded" width="100px" height="100px"/></div>
+                                        </div> -->
                                           <div class="mb-3 col-lg-8 col-sm-6 col-md-8">
                                           <br>
                                           <label class="form-label">Image  <span class="text-small text-muted
@@ -138,19 +141,20 @@ $user_id=$_GET['user_id'];
 
 "><i>Format: jpeg, jpg or png </i></span>  </label>
                                 <input type="hidden" id="ad_image" name="ad_image" />
-                                            <input type="file" name="image" id="image" class="form-control input-default " >
+                                <div id="uppy"></div>
+                                            <!-- <input type="file" name="image" id="image" class="form-control input-default " > -->
                                         </div>
-                                         <div class="mb-3 col-lg-2 col-md-4 col-sm-6 mt-6">
+                                         <!-- <div class="mb-3 col-lg-2 col-md-4 col-sm-6 mt-6">
                                          <br>
                                 <button  class="btn btn-sm  btn-outline-primary btn-rounded-circle" style="margin-top:27px;" id="addInputImage"><i class="fa fa-plus color-info"></i></button>
-                                        </div>
+                                        </div> -->
 
                                         
                                     </div>
                                     <div class="col-lg-12" > 
                                         <div class="row" id="ads_images"></div>
                                     </div>
-                                    <div class="col-lg-12" id="image_box"> </div>
+                                    <!-- <div class="col-lg-12" id="image_box"> </div> -->
                                 
                               <!-- <div class="col-lg-12">
                                  <div class="row">
@@ -183,7 +187,7 @@ include 'includes/footer.php';
 
   <script src="vendor/ckeditor/ckeditor.js"></script>
     <script>
-       ClassicEditor
+     ClassicEditor
     .create( document.querySelector( '#ad_desc' ), {
         toolbar: {
             items: [
@@ -200,6 +204,9 @@ include 'includes/footer.php';
              
             ]
         }
+    } ).then( editor => {
+        appEditor = editor;
+        appEditor.setData(data.ad_description);
     } )
     .catch( error => {
         console.error( error );
@@ -207,6 +214,7 @@ include 'includes/footer.php';
     </script>
 <script src="./vendor/leafleft/leaflet.js"></script>
 <link rel="stylesheet" href="./vendor/leafleft/leaflet.css" />
+<script src="./vendor/uppy core/dist/uppy.min.js"></script>
 <script type="text/javascript" src="assets/js/copy_ad.js"></script>
 
 <script src="js/tags_input.js"></script>
@@ -219,4 +227,3 @@ include 'includes/footer.php';
   // Add click listener to map to set marker and update input fields
  
 </script>
-

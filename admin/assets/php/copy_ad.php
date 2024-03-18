@@ -9,7 +9,7 @@ if(!isset($_POST['user_id']) || empty($_POST['user_id']) || !isset($_POST['ad_ti
 || !isset($_POST['sub_categories'])  || empty($_POST['sub_categories']) 
 || !isset($_POST['state'])  || empty($_POST['state']) 
 || !isset($_POST['city'])  || empty($_POST['city']) 
- || !isset($_POST['ad_desc']) || empty($_POST['ad_desc']) || !isset($_FILES['image']) || empty($_FILES['image']) )
+ || !isset($_POST['ad_desc']) || empty($_POST['ad_desc'])  )
 {
   die(json_encode(array('reponse'=>'false',"message"=>1)));
 }
@@ -33,49 +33,49 @@ $keyword=$_POST['all_tags_input'];
 // $longitude=$_POST['longitude'];
 $t=time();
 $path= '../../ads_images/';
-$ad_image=$_POST["ad_image"];
+// $ad_image=$_POST["ad_image"];
 $fileName="";
 
 
 
-if(isset($_FILES['image']) && $_FILES['image']['name']!=""){
+// if(isset($_FILES['image']) && $_FILES['image']['name']!=""){
 
-    unlink('../../ads_images/'.$_POST["ad_image"]);
-            $t=time();
-      $target_dir = '../../ads_images/';
-         $target_file = $target_dir . $t.'_'.basename($_FILES["image"]["name"]);
-      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+//     unlink('../../ads_images/'.$_POST["ad_image"]);
+//             $t=time();
+//       $target_dir = '../../ads_images/';
+//          $target_file = $target_dir . $t.'_'.basename($_FILES["image"]["name"]);
+//       $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     
-      $fileName = $t.'_'.basename($_FILES["image"]["name"]);
+//       $fileName = $t.'_'.basename($_FILES["image"]["name"]);
   
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
-   die(json_encode(array('reponse'=>'false',"message"=>2)));
-  }else{
+//   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+//   && $imageFileType != "gif" ) {
+//    die(json_encode(array('reponse'=>'false',"message"=>2)));
+//   }else{
       
-      move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-  }
-  }else{
+//       move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+//   }
+//   }else{
   
-if($ad_image!=""){
-  $fileName=  $t.'_'.$ad_image;
-  copy($path.$ad_image,$path.$fileName);
-}
+// if($ad_image!=""){
+//   $fileName=  $t.'_'.$ad_image;
+//   copy($path.$ad_image,$path.$fileName);
+// }
    
-  }
+//   }
 
-if(isset($_FILES['ads_images']) && $_FILES['ads_images']['name']!=""){
-  if(isset($_FILES['ads_images'])){
-    foreach ($_FILES['ads_images']['type'] as $key => $val) {
-       // var_dump($_FILES['product_images']['type'][$key]);
+// if(isset($_FILES['ads_images']) && $_FILES['ads_images']['name']!=""){
+//   if(isset($_FILES['ads_images'])){
+//     foreach ($_FILES['ads_images']['type'] as $key => $val) {
+//        // var_dump($_FILES['product_images']['type'][$key]);
       
-        if(($_FILES['ads_images']['type'][$key] !='image/png') &&  ($_FILES['ads_images']['type'][$key]  !='image/jpg') && ($_FILES['ads_images']['type'][$key] !='image/jpeg')){
-          die(json_encode(array('reponse'=>'false',"message"=>2)));
+//         if(($_FILES['ads_images']['type'][$key] !='image/png') &&  ($_FILES['ads_images']['type'][$key]  !='image/jpg') && ($_FILES['ads_images']['type'][$key] !='image/jpeg')){
+//           die(json_encode(array('reponse'=>'false',"message"=>2)));
            
-        }
-    }
-}
-}
+//         }
+//     }
+// }
+// }
 
 
   try {
@@ -101,39 +101,78 @@ if(isset($_FILES['ads_images']) && $_FILES['ads_images']['name']!=""){
               "",
               $keyword
             ));
-            $id=$bdd->lastInsertId();
-            if(isset($_FILES['ads_images']) && $_FILES['ads_images']['name']!=""){
-              if(isset($_FILES['ads_images'])){
-                foreach ($_FILES['ads_images']['type'] as $key => $val) {
-                   // var_dump($_FILES['product_images']['type'][$key]);
+            
+
+            if(isset($_FILES['files'])){
+              $id=$bdd->lastInsertId();
+              $target_dir = '../../ads_images/';
+              $response = array(); // Initialize response array
+            
+              // Loop through each uploaded file
+              for($i = 0; $i < count($_FILES['files']['name']); $i++) {
+                $t=time();
+                  $fileName = $_FILES['files']['name'][$i];
+                  $tmpFilePath = $_FILES['files']['tmp_name'][$i];
+            
+                  $file= $t.'_'. basename($fileName);
+                  $targetFilePath = $target_dir . $t.'_'. basename($fileName);
+                 
+                  $imageFileType = strtolower(pathinfo($targetFilePath, PATHINFO_EXTENSION)); // Get the file extension
                   
-                    if(($_FILES['ads_images']['type'][$key] !='image/png') &&  ($_FILES['ads_images']['type'][$key]  !='image/jpg') && ($_FILES['ads_images']['type'][$key] !='image/jpeg')){
-                      die(json_encode(array('reponse'=>'false',"message"=>2)));
+                  // Check if the uploaded file is an image
+                  $allowedExtensions = array("jpg", "jpeg", "png", "gif");
+                  if(!in_array($imageFileType, $allowedExtensions)) {
+                      $response[] = array('fileName' => $fileName, 'success' => false, 'message' => 'Invalid file format');
+                      continue; // Skip this file and proceed to the next one
+                  }
+                  
+                  // Move the uploaded file to the target directory
+                  if(move_uploaded_file($tmpFilePath, $targetFilePath)) {
+                      //$response[] = array('fileName' => $fileName, 'success' => true, 'message' => 'File uploaded successfully');
+                      $req = $bdd->prepare("INSERT INTO `images`(`ad_id`, `path`, `creation_date`) VALUES(?,?,NOW())  ");
+                      $req->execute(array(
+                          $id,
+                          $file
+                      ));
+                  } else {
+                      $response[] = array('fileName' => $fileName, 'success' => false, 'message' => 'Failed to upload file');
+                  }
+              }
+            
+             // echo json_encode($response); // Output the response array as JSON
+            }
+            // if(isset($_FILES['ads_images']) && $_FILES['ads_images']['name']!=""){
+            //   if(isset($_FILES['ads_images'])){
+            //     foreach ($_FILES['ads_images']['type'] as $key => $val) {
+            //        // var_dump($_FILES['product_images']['type'][$key]);
+                  
+            //         if(($_FILES['ads_images']['type'][$key] !='image/png') &&  ($_FILES['ads_images']['type'][$key]  !='image/jpg') && ($_FILES['ads_images']['type'][$key] !='image/jpeg')){
+            //           die(json_encode(array('reponse'=>'false',"message"=>2)));
                        
-                    }
-                }
-               }
+            //         }
+            //     }
+            //    }
             
         
             
-              foreach ($_FILES['ads_images']['name'] as $key => $val) {
-                $t=time();
-                $product_image =$_FILES['ads_images']['name'][$key];
+            //   foreach ($_FILES['ads_images']['name'] as $key => $val) {
+            //     $t=time();
+            //     $product_image =$_FILES['ads_images']['name'][$key];
                
                 
-                $product_image_tmp_name = $_FILES['ads_images']['tmp_name'][$key];
-                $product_image=$t.'_'.$product_image;
-                move_uploaded_file($product_image_tmp_name ,'../../ads_images/'.$product_image);
+            //     $product_image_tmp_name = $_FILES['ads_images']['tmp_name'][$key];
+            //     $product_image=$t.'_'.$product_image;
+            //     move_uploaded_file($product_image_tmp_name ,'../../ads_images/'.$product_image);
             
-                $req = $bdd->prepare("INSERT INTO `images`(`ad_id`, `path`, `creation_date`) VALUES(?,?,NOW())  ");
-                $req->execute(array(
-                    $id,
-                    $product_image
-                ));
+            //     $req = $bdd->prepare("INSERT INTO `images`(`ad_id`, `path`, `creation_date`) VALUES(?,?,NOW())  ");
+            //     $req->execute(array(
+            //         $id,
+            //         $product_image
+            //     ));
             
               
-            }
-            }
+            // }
+            // }
 
 
 

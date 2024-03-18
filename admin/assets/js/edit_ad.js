@@ -2,6 +2,72 @@ var lati = ""
 var longi = ""
 $(document).ready(function(){
 
+
+  const StatusBar = Uppy.StatusBar
+  const Informer = Uppy.Informer
+  const Webcam = Uppy.Webcam
+  const Dashboard = Uppy.Dashboard
+  const GoogleDrive = Uppy.GoogleDrive
+  const Dropbox = Uppy.Dropbox
+  const Instagram = Uppy.Instagram
+  const Facebook = Uppy.Facebook
+  const OneDrive = Uppy.OneDrive
+  const ScreenCapture = Uppy.ScreenCapture
+  const ImageEditor = Uppy.ImageEditor
+  const Tus = Uppy.Tus
+  const DropTarget = Uppy.DropTarget
+  const GoldenRetriever = Uppy.GoldenRetriever
+  const XHRUpload = Uppy.XHRUpload
+  
+  const uppy = new Uppy.Core({
+      id: 'uppy',
+      autoProceed: false,
+      allowMultipleUploads: true,
+      debug: false,
+      restrictions: {
+        maxFileSize: null,
+        minFileSize: null,
+        maxTotalFileSize: null,
+        maxNumberOfFiles: null,
+        minNumberOfFiles: null,
+        allowedFileTypes: ['image/*', 'video/*']
+      },
+      meta: {},
+      onBeforeFileAdded: (currentFile, files) => currentFile,
+      onBeforeUpload: (files) => {},
+      locale: {},
+      // store: new DefaultStore(),
+      // logger: justErrorsLogger,
+      infoTimeout: 5000
+  })
+  .use(Dashboard, {
+    trigger: '.UppyModalOpenerBtn',
+    inline: true,
+    target: '#uppy',
+    replaceTargetContent: true,
+    showProgressDetails: true,
+    note: 'Images and video only, 2–3 files, up to 1 MB',
+    height: 470,
+    metaFields: [
+      { id: 'name', name: 'Name', placeholder: 'file name' },
+      { id: 'caption', name: 'Caption', placeholder: 'describe what the image is about' }
+    ],
+    browserBackButtonClose: false,
+    disableUploadButton: true // Add this line to disable the upload button
+  })
+  .use(GoogleDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Dropbox, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Instagram, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Facebook, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(OneDrive, { target: Dashboard, companionUrl: 'https://companion.uppy.io' })
+  .use(Webcam, { target: Dashboard })
+  .use(ScreenCapture, { target: Dashboard })
+  .use(ImageEditor, { target: Dashboard })
+  // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+  .use(DropTarget, {target: document.body })
+  .use(GoldenRetriever)
+  
+  
   /************************************************************************************************** */
 
 //   const mapDiv = document.getElementById("map");
@@ -120,8 +186,6 @@ $(document).ready(function(){
 // }
 
   /*************************************************************************************************** */
-
-
   function loadCat(){
 
     $.ajax({
@@ -134,7 +198,7 @@ $(document).ready(function(){
             var data = JSON.parse(response)
             if(data.reponse=='true'){
                 data=data.list
-                var cat_list="<option></option>"
+                var cat_list=" <option value='' selected>Select...</option>   "
                 for(i=0;i<data.length;i++){
                     cat_list+='<option value="'+
                     data[i]["id_gen_cat"]+
@@ -187,7 +251,7 @@ $(document).ready(function(){
           var data = JSON.parse(response)
           if(data.reponse=='true'){
               data=data.list
-              var cat_list="<option></option>"
+              var cat_list=" <option value='' selected>Select...</option>   "
               for(i=0;i<data.length;i++){
                   cat_list+='<option value="'+
                   data[i]["id_sub_cat"]+
@@ -266,17 +330,67 @@ $(document).ready(function(){
             var data = JSON.parse(response)
             if(data.reponse=="true"){
                 data = data.result
+                console.log(data)
                 $('#ad_title').val(data.ad_title)
           //   console.log(data.ad_description)
+          $('#image_ad').attr('src','ads_images/'+data.ad_image)
+          if(data.ad_image==""){
+           $('#image_ad').hide()
+          }else{
+           $('#no_image').hide()
+          }
+
+          /********************************************************************** */
+          if(data.ad_image!=""){
+
+            $('#image_ad').attr("src",'ads_images/'+data.ad_image)
+            $('#image_ad').show()
+
+                  // Add delete button
+      var deleteButton = document.createElement('button');
+      deleteButton.innerHTML = '<i class="fa fa-trash"></i>';
+    
+      deleteButton.classList.add('delete-button');
+      deleteButton.classList.add('btn'); // Add the desired class to the delete button
+      deleteButton.classList.add('btn-primary'); // Add the desired class to the delete button
+      deleteButton.classList.add('btn-xs');
+      deleteButton.classList.add('sharp');
+      deleteButton.addEventListener('click', function(e) {
+        e.preventDefault()
+        // Delete image functionality here
+       // output.src = ''; // Clear the image source
+        $('#image_ad').hide(); // Hide the image element
+          $('#no_image').show()
+          $('#image').val('');
+          $('#ad_image').val('')
+        //$('#image').val(''); // Reset the value of the file input
+        this.remove(); // Remove the delete button itself
+      });
+      
+      // Append delete button to the container
+      var container = document.getElementById('image_container');
+      container.appendChild(deleteButton);
+            
+          }else{
+            $('#image_user').hide()
+          }
+          /********************************************************************* */
              $('#image_ad').attr('src','ads_images/'+data.ad_image)
              $('#ad_image').val(data.ad_image)
+
+
+             /********************************************************************* */
+
+             
            $('#general_cat').val(data.general_cat)
-         
+           loadSubCat(data.general_cat)
+           $('#sub_categories').val(data.suub_cat)
            $('#state').val(data.state)
+           // $('#city').val(data.cities)
+            loadCities(data.state)
             $('#city').val(data.cities)
          var keywords= data.keyword.split(",");
-         console.log(keywords)
-
+       
          for(i=0;i<keywords.length;i++){
           if(keywords[i]!=''){
             tags.push(keywords[i]);
@@ -284,8 +398,25 @@ $(document).ready(function(){
           }
           
          }
+         var user_id = data.user_id
+         $.ajax({
+          url:'assets/php/list_cat.php',
+          method:'post',
+          async:false,
+          data:{user_id:user_id},
+          success:function(response){
+            var data = JSON.parse(response)
+      data=data.list
+            var categories=" <option value='' selected>Select...</option>   "
+      
+            for(i=0;i<data.length;i++){
+              categories+='<option value="'+data[i].cat_id +'">'+data[i].cat_title+'</option>'
+            }
+            $('#categories').append(categories)
+          }
+         })
+         $('#categories').val(data.category_id)
           
-            console.log(tags+' tags****************************************************')
           //  $('#city_area').val(data.city_area)
           //  $('#address_ad').val(data.address_ad)
           //  $('#latitude-input').val(data.lat)
@@ -297,30 +428,11 @@ $(document).ready(function(){
           //  marker = L.marker([lati, longi]).addTo(map);
                 appEditor.setData( data.ad_description );
 
-                loadSubCat(data.general_cat)
-                $('#sub_categories').val(data.suub_cat)
+             
 
-                loadCities(data.state)
-                $('#city').val(data.cities)
+              
          // get list categories
-var user_id = data.user_id
-   $.ajax({
-    url:'assets/php/list_cat.php',
-    method:'post',
-    async:false,
-    data:{user_id:user_id},
-    success:function(response){
-      var data = JSON.parse(response)
-data=data.list
-      var categories=''
 
-      for(i=0;i<data.length;i++){
-        categories+='<option value="'+data[i].cat_id +'">'+data[i].cat_title+'</option>'
-      }
-      $('#categories').append(categories)
-    }
-   })
-   $('#categories').val(data.category_id)
             }
          }
     })
@@ -359,8 +471,21 @@ $('#edit_ad').on('keyup keypress', function(e) {
 $('.required').hide()
 $('#edit_ad').submit(function(e){
 
-  console.log($('#latitude-input').val())
+ 
     e.preventDefault();
+
+
+    
+
+const formData = new FormData(this);
+uppy.getFiles().forEach(file => {
+    formData.append('files[]', file.data);
+});
+
+// Example: Log form data to console
+for (const [name, value] of formData.entries()) {
+    console.log(`${name}: ${value}`);
+}
             $.ajax({
                 url:'assets/php/edit_ads.php',
                 method:'post',
@@ -368,7 +493,7 @@ $('#edit_ad').submit(function(e){
                         processData: false,  // tell jQuery not to process the data
                         contentType: false,  // tell jQuery not to set contentType
                         cache:false,
-                        data : new FormData(this),
+                        data: formData,
                         success:function(response){
                              var data = JSON.parse(response);
                            
@@ -418,18 +543,52 @@ $('#edit_ad').submit(function(e){
     /*********************************************************** */
     //preview image file
    
-       function loadFile(event) {
-        var output = document.getElementById('image_ad');
-        output.src = URL.createObjectURL(event.target.files[0]);
-        output.onload = function() {
-          URL.revokeObjectURL(output.src) // free memory
-        }
-      };
-
-      $('#image').change(function(event){
-        loadFile(event)
-      })
-
+    if (!$('#image_ad').attr('src')) {
+      $('#image_ad').hide();
+    }
+    function loadFile(event) {
+      var output = document.getElementById('image_ad');
+      output.src = URL.createObjectURL(event.target.files[0]);
+      output.onload = function() {
+        URL.revokeObjectURL(output.src); // free memory
+      }
+      $('#image_ad').show();
+      $('#no_image').hide()
+      var container = document.getElementById('image_container');
+      var existingDeleteButton = container.querySelector('.delete-button');
+      if (existingDeleteButton) {
+        existingDeleteButton.remove();
+      }
+  
+  
+      // Add delete button
+      var deleteButton = document.createElement('button');
+      deleteButton.innerHTML = '<i class="fa fa-trash"></i>';
+    
+      deleteButton.classList.add('delete-button');
+      deleteButton.classList.add('btn'); // Add the desired class to the delete button
+      deleteButton.classList.add('btn-primary'); // Add the desired class to the delete button
+      deleteButton.classList.add('btn-xs');
+      deleteButton.classList.add('sharp');
+      deleteButton.addEventListener('click', function() {
+        // Delete image functionality here
+        output.src = ''; // Clear the image source
+        $('#image_ad').hide(); // Hide the image element
+          $('#no_image').show()
+          $('#image').val('');
+        //$('#image').val(''); // Reset the value of the file input
+        this.remove(); // Remove the delete button itself
+      });
+      
+      // Append delete button to the container
+      var container = document.getElementById('image_container');
+      container.appendChild(deleteButton);
+    }
+    
+    $('#image').change(function(event) {
+      loadFile(event);
+    });
+  
 
 
 
@@ -453,7 +612,7 @@ $('#edit_ad').submit(function(e){
         
             var data= JSON.parse(response)
             data = data.list
-            var list_cities='<option disabled selected>select a city...</option>'
+            var list_cities='<option value=""  selected>select...</option>'
     
             for (i=0;i<data.length;i++){
               list_cities+='<option value="'+data[i].id_city+'">'+data[i].city+' </option>'
@@ -475,7 +634,8 @@ function loadCities(state){
     
       var data= JSON.parse(response)
       data = data.list
-      var list_cities='<option disabled selected>select a city...</option>'
+      console.log(data)
+      var list_cities='<option value=""  selected>select...</option>'
 
       for (i=0;i<data.length;i++){
         list_cities+='<option value="'+data[i].id_city+'">'+data[i].city+' </option>'
