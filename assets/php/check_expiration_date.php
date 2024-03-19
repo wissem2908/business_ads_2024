@@ -17,7 +17,7 @@ function check_expiration($date) {
 
   try {
     $bdd = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME."; charset=utf8", DB_USER, DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    $req = $bdd->prepare('SELECT * FROM `ads` ');
+    $req = $bdd->prepare('SELECT * FROM `ads` left join  general_categories on ads.general_cat = general_categories.id_gen_cat  where general_categories.title_cat="Jobs"  ');
     $req->execute();
                   
     while($res=$req->fetch(PDO::FETCH_ASSOC)){
