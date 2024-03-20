@@ -60,7 +60,7 @@ if(adsObj==null) adsObj=[]
                         user_image='admin/logo_images/'+data[i].logo
                     }
                   
-                    listUsers+='<div class=" users_items users col-lg-4 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="rounded-circle" alt=""></a><p style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand"><h3><b style="font-size:20px; font-weight:700;">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
+                    listUsers+='<div class=" users_items users col-lg-4 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="" alt=""></a><p style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand"><h3><b style="font-size:20px; font-weight:700;">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
                 }
               
                 $('.users').css('display','block !important')

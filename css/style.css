@@ -251,10 +251,11 @@ text-align: center;}
     margin-bottom: 14px;
 }
 
-.service img {
+/* .service img {
     width: 100px !important;
     height: 100px !important;
-}
+} */
+
 
 
 .project {
@@ -510,3 +511,10 @@ footer .social-icons a {
  .users{
      display: block;
  }
+
+ .service img {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover;
+    margin: 5px;
+}
