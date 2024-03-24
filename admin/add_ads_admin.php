@@ -187,7 +187,7 @@ include 'includes/footer.php';
     } );
     </script>
 
-<script type="text/javascript" src="assets/js/add_ads.js"></script>
+<script  src="assets/js/add_ads.js"  type="module"></script>
 
 <script src="vendor/leafleft/leaflet.js"></script>
 <link rel="stylesheet" href="vendor/leafleft/leaflet.css" />
