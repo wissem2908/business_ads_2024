@@ -5,7 +5,6 @@ import {
   Tus,
 } from 'https://releases.transloadit.com/uppy/v3.23.0/uppy.min.mjs'
 
-
 var lati = ""
 var longi = ""
 $(document).ready(function(){
@@ -75,9 +74,7 @@ $(document).ready(function(){
   // // .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
   // .use(DropTarget, {target: document.body })
   // .use(GoldenRetriever)
-  
-  
-const uppy = new Uppy({ debug: true, autoProceed: false })
+  const uppy = new Uppy({ debug: true, autoProceed: false })
 .use(Dashboard, {
     trigger: '.UppyModalOpenerBtn',
     inline: true,
@@ -95,6 +92,7 @@ const uppy = new Uppy({ debug: true, autoProceed: false })
   })
   .use(Webcam, { target: Dashboard })
   .use(Tus, { endpoint: 'https://tusd.tusdemo.net/files/' })
+  
   /************************************************************************************************** */
 
 //   const mapDiv = document.getElementById("map");

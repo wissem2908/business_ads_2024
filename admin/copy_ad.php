@@ -215,7 +215,7 @@ include 'includes/footer.php';
 <script src="./vendor/leafleft/leaflet.js"></script>
 <link rel="stylesheet" href="./vendor/leafleft/leaflet.css" />
 <script src="./vendor/uppy core/dist/uppy.min.js"></script>
-<script type="text/javascript" src="assets/js/copy_ad.js"></script>
+<script type="module" src="assets/js/copy_ad.js"></script>
 
 <script src="js/tags_input.js"></script>
 
