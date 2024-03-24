@@ -531,6 +531,7 @@ for (const [name, value] of formData.entries()) {
                                              
                           else if(data.reponse=="true" ){
                             $('.required').hide()
+                            uppy.reset()
     Swal.fire({
     
       icon: 'success',

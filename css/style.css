@@ -513,8 +513,11 @@ footer .social-icons a {
  }
 
  .service img {
-    width: 200px !important;
-    height: 200px !important;
+    width: 100px !important;
+    height: 100px !important;
     object-fit: cover;
     margin: 5px;
+}
+.text-wrap{
+    word-wrap: break-word;
 }

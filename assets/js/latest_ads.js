@@ -63,7 +63,7 @@ if(adsObj.includes(data[i].ads_id))
     var title=data[i].ad_title
     var host= window.location.hostname
     
-                latest_ads+=' <div class=" col-lg-4 col-md-6"><div class=" service"><a target="_blank"  href="'+
+                latest_ads+=' <div class=" col-lg-3 col-md-6"><div class=" service"><a target="_blank"  href="'+
                 data[i].username+'/'+cat.replaceAll(" ","_")+'/'+title.replaceAll(" ","_")+'/'+data[i].ads_id+'" ><img src="'+ad_image+
                 '"  class="rounded" ></a><p style="font-size:20px;" >'+data[i].ad_title+
                 '</p><a  href="'+

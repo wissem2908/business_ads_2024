@@ -59,6 +59,7 @@ var mapLink = "https://www.google.com/maps/search/?api=1&query=" + lat + "," + l
                     user_image='admin/logo_images/'+data.logo
                 }
                 $('#user_img').attr('src',user_image)
+                $('#company_cover').attr('src',"admin/cover_images/"+data.company_cover)
 
 
                 /************************************************** */

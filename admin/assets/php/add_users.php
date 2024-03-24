@@ -25,6 +25,7 @@ $whatsapp_number=$_POST['whatsapp_number'];
 $latitude = $_POST['latitude'];
 $longitude = $_POST['longitude'];
 $fileName="";
+$company_cover="";
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
@@ -81,13 +82,34 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
     move_uploaded_file($_FILES["logo"]["tmp_name"], $target_file);
 }
 }
+
+
+/*********************** */
+
+
+if(isset($_FILES['company_cover']) && $_FILES['company_cover']['name']!=""){
+    $t=time();
+$target_dir = '../../cover_images/';
+ $target_file = $target_dir . $t.'_'.basename($_FILES["company_cover"]["name"]);
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+$company_cover = $t.'_'.basename($_FILES["company_cover"]["name"]);
+
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+die(json_encode(array('reponse'=>'false',"message"=>3)));
+}else{
+
+move_uploaded_file($_FILES["company_cover"]["tmp_name"], $target_file);
+}
+}
   try {
 
             //connexion a la base de données
             $bdd = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME."; charset=utf8", DB_USER, DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     
             // insert user
-            $req = $bdd->prepare('INSERT INTO `users`(`username`, `business_name`,  `email`, `logo`, `contact_name`, `password`, `role`, `status`, user_desc,address,phone_number,whatsapp_number,lat,lon,`creation_date`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())');
+            $req = $bdd->prepare('INSERT INTO `users`(`username`, `business_name`,  `email`, `logo`, `contact_name`, `password`, `role`, `status`, user_desc,address,phone_number,whatsapp_number,lat,lon,company_cover,`creation_date`) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())');
             $req->execute(array(
                 $username,
                 $business_name,
@@ -103,7 +125,8 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                 $phone_number,
                 $whatsapp_number,
                 $latitude,
-                $longitude
+                $longitude,
+                $company_cover
     
             ));
 

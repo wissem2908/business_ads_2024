@@ -1,4 +1,27 @@
 <?php
+
+include 'assets/php/config.php';
+   //connexion a la base de données
+   $bdd = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME."; charset=utf8", DB_USER, DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+$req = $bdd->prepare('select * from `maintenance`');
+$req->execute();
+$res=$req->fetch(PDO::FETCH_ASSOC);
+$maintenanceMode=$res['value'];
+//echo $maintenanceMode;
+//$maintenanceMode = false; // Set to true to enable maintenance mode
+
+if ($maintenanceMode=="true") {
+    header('Location: maintenance.php');
+    exit();
+}
+
+// Normal site content goes here
+?>
+
+
+
+
+<?php
 include ('includes/header_1.php');
 ?>
 
@@ -30,7 +53,7 @@ text-decoration: none;
                     <div class="intro">
                         
                         <h1>Advertisers</h1>
-                      <a target='_blank' href="map.php">See advertisers on Map</a>
+                      <!-- <a target='_blank' href="map.php">See advertisers on Map</a> -->
                     </div>
                 </div>
             </div>

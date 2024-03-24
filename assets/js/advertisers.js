@@ -60,7 +60,7 @@ if(adsObj==null) adsObj=[]
                         user_image='admin/logo_images/'+data[i].logo
                     }
                   
-                    listUsers+='<div class=" users_items users col-lg-4 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="" alt=""></a><p style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand"><h3><b style="font-size:20px; font-weight:700;">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
+                    listUsers+='<div class=" users_items users col-lg-3 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="" alt=""></a><p style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand"><h3><b class="text-wrap" style="font-size:20px; font-weight:700;">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
                 }
               
                 $('.users').css('display','block !important')
@@ -242,9 +242,9 @@ if(adsObj.includes(data[i].ads_id))
 }
 
 
+ 
 
-
-listAds+=' <div class="ads_items col-lg-4 col-md-6"><div class=" service"><a target="_blank"  href="'+
+listAds+=' <div class="ads_items col-lg-3 col-md-6"><div class=" service"><a target="_blank"  href="'+
     data[i].username+'/'+cat.replaceAll(" ","_")+'/'+title.replaceAll(" ","_")+'/'+data[i].ads_id+'" ><img src="'+ad_image+
     '"  class="rounded" ></a><p style="font-size:20px;" >'+data[i].ad_title+
     '</p><a  href="'+

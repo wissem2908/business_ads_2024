@@ -182,13 +182,12 @@ include 'includes/footer.php';
     } );
     </script>
 
-
 <script type="text/javascript" src="assets/js/add_ads.js"></script>
 
 <script src="./vendor/leafleft/leaflet.js"></script>
 <link rel="stylesheet" href="./vendor/leafleft/leaflet.css" />
 <script src="./vendor/uppy core/dist/uppy.min.js"></script>
-<script src="./js/uppy_code.js"></script>
+
 <script src="vendor/leafleft/leaflet.js"></script>
 <link rel="stylesheet" href="vendor/leafleft/leaflet.css" />
 

@@ -13,6 +13,15 @@ session_start();
                     </ol>
                 </div>
                 <?php if($_SESSION['role']=="admin"){ ?>
+                  <div class="row page-titles">
+                    <ol class="breadcrumb">
+                        
+                        <li class="breadcrumb-item active"><p></p><div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" id="maintenanceCheck">
+  <label class="form-check-label" for="maintenanceCheck">Display Maintenance</label>
+</div></li>
+                    </ol>
+                </div>
 				<div class="row">
                   <div class="col-lg-12">
                     <div class="row">
@@ -175,3 +184,63 @@ include 'includes/footer.php';
 
 
       <script src="assets/js/statistique.js"></script>
+
+
+      <script>
+
+$(document).ready(function(){
+
+function getMaintenanceStatus(){
+  $.ajax({
+      url:'./assets/php/maintenance.php',
+      method:'post',
+      async:false,
+      data:{action:'get'},
+      success:function(response){
+        console.log(response)
+
+        var val = JSON.parse(response)
+        data = val.data.value
+        console.log(data)
+       if(data=="true"){
+        $("#maintenanceCheck").prop("checked", true);
+       }
+         
+        
+      
+      }
+    })
+}
+
+getMaintenanceStatus()
+  $('#maintenanceCheck').change(function(){
+    // Check if the checkbox is checked
+    var value=false
+    if ($(this).prop("checked")) {
+        // Checkbox is checked, perform desired action
+        console.log("Maintenance checkbox is checked");
+        value=true
+        // You can do further processing here
+    } else {
+        // Checkbox is not checked
+        console.log("Maintenance checkbox is not checked");
+        // You can do further processing here
+        value=false
+    }
+    console.log(value)
+
+
+    $.ajax({
+      url:'./assets/php/maintenance.php',
+      method:'post',
+      async:false,
+      data:{value:value,action:'change'},
+      success:function(response){
+        console.log(response)
+      }
+    })
+  })
+})
+
+
+      </script>

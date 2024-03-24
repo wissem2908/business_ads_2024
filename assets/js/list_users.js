@@ -48,7 +48,7 @@ if(adsObj==null) adsObj=[]
                         }
                         const link = host+'/'+data[i].username
                  
-                        listUsers+='<div class="users col-lg-4 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="" alt=""></a><p class="text-break" style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand" style="width:100%;"><h3 ><b class="text-wrap" style="">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
+                        listUsers+='<div class="users col-lg-3 col-md-6"><div class="service"><a href="'+url+''+data[i].username+'"><img src="'+user_image+'" class="" alt=""></a><p class="text-break" style="font-size:20px;" >'+data[i].business_name+'</p><a href="'+url+''+data[i].username+'" class="btn btn-sm btn-brand" style="width:100%;"><h3 ><b class="text-wrap" style="">'+host+'/'+data[i].username+'</b></h3></a> </div>  </div>'
 
 
 

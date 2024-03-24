@@ -20,6 +20,7 @@ $address=$_POST['address'];
 $phone_number=$_POST['phone_number'];
 $whatsapp_number=$_POST['whatsapp_number'];
 $fileName=$_POST['logo_image'];
+$company_cover=$_POST['company_cover'];
 $latitude = $_POST['latitude'];
 $longitude = $_POST['longitude'];
 
@@ -71,13 +72,36 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
     move_uploaded_file($_FILES["logo"]["tmp_name"], $target_file);
 }
 }
+
+/************************************************************ */
+if(isset($_FILES['company_cover']) && $_FILES['company_cover']['name']!=""){
+
+    if($company_cover!=''){
+        unlink('../../cover_images/'.$company_cover);
+    }
+
+    $t=time();
+    $target_dir = '../../cover_images/';
+    $target_file = $target_dir . $t.'_'.basename($_FILES["company_cover"]["name"]);
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+    $company_cover = $t.'_'.basename($_FILES["company_cover"]["name"]);
+
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+ die(json_encode(array('reponse'=>'false',"message"=>3)));
+}else{
+    
+    move_uploaded_file($_FILES["company_cover"]["tmp_name"], $target_file);
+}
+}
   try {
 
             //connexion a la base de données
             $bdd = new PDO("mysql:host=".DB_SERVER.";dbname=".DB_NAME."; charset=utf8", DB_USER, DB_PASS, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     
             // insert user
-            $req = $bdd->prepare('UPDATE `users` SET `username`=?,`business_name`=?,`email`=?,`logo`=?,`contact_name`=?,`role`=?,`status`=?,user_desc=?,address=?,phone_number=?, whatsapp_number=?,lat=?,lon=? WHERE user_id=?');
+            $req = $bdd->prepare('UPDATE `users` SET `username`=?,`business_name`=?,`email`=?,`logo`=?,`contact_name`=?,`role`=?,`status`=?,user_desc=?,address=?,phone_number=?, whatsapp_number=?,lat=?,lon=?,company_cover=? WHERE user_id=?');
             $req->execute(array(
                 $username,
                 $business_name,
@@ -93,6 +117,7 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
                 $whatsapp_number,
                 $latitude,
                 $longitude,
+                $company_cover,
                 $user_id
     
             ));

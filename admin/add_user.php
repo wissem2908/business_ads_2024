@@ -224,6 +224,10 @@ include 'includes/header.php';
 
 
 </div>
+<div class="mb-3 col-lg-12 col-md-12">
+                                <label class="form-label">Company cover: Please upload a JPG or PNG image with a minimum size of 800 x 400 pixels</label>
+                                            <input type="file" name="company_cover" id="company_cover" class="form-control input-default " >
+                                        </div>
                             </div>
 
 

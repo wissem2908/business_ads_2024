@@ -28,3 +28,6 @@ Stack trace:
 #0 {main}
   thrown in /home/adscomau/public_html/admin/assets/php/change_pass.php on line 71
 [14-Apr-2023 11:44:33 UTC] PHP Warning:  unlink(../../blog_images/): Is a directory in /home/adscomau/public_html/admin/assets/php/edit_blog.php on line 22
+[19-Mar-2024 04:27:14 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58
+[21-Mar-2024 06:04:02 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58
+[21-Mar-2024 06:10:49 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58

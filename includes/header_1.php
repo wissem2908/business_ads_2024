@@ -44,7 +44,7 @@ $website=$_SERVER['SERVER_NAME'];
     <!-- BOTTOM NAV -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/" id="website"><?php echo $website?></a>
+            <a class="navbar-brand" href="/" id="website"></a><img src="./img/logo.png" style='width:150px;'/>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -66,6 +66,9 @@ $website=$_SERVER['SERVER_NAME'];
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="follow.php">Following</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target='_blank' href="map.php">Map</a>
                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>

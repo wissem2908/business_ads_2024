@@ -50,6 +50,10 @@ include ('includes/header_1.php');
   background:#222;
   border:none;
 }
+.text-wrap{
+  word-wrap: break-word !important;
+    word-break: break-word !important;
+}
     </style>
 
 <link rel="stylesheet" href="css/index.css" />

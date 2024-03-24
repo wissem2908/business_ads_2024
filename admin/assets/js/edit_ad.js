@@ -24,6 +24,7 @@ $(document).ready(function(){
       autoProceed: false,
       allowMultipleUploads: true,
       debug: false,
+      restore: false,
       restrictions: {
         maxFileSize: null,
         minFileSize: null,
@@ -525,6 +526,8 @@ for (const [name, value] of formData.entries()) {
                                              
                           else if(data.reponse=="true" ){
                             $('.required').hide()
+                            localStorage.removeItem('uppyState');
+                            uppy.reset()
     Swal.fire({
     
       icon: 'success',

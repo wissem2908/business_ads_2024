@@ -90,15 +90,15 @@ body{
 <div class="col-lg-9">
 <div class="row">
         <div class="col-lg-12">
-            <div class="row " id="list_ads"></div>
+            <div class="row " id="list_ads">    
+
+<img id="company_cover" width="800px" height='400px' />
+</div>
         </div>
           <div class="col-lg-3">
             <br>
        <div class="row">
       
-    
-
-
 
     
 
