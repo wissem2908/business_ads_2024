@@ -31,3 +31,8 @@ Stack trace:
 [19-Mar-2024 04:27:14 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58
 [21-Mar-2024 06:04:02 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58
 [21-Mar-2024 06:10:49 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 58
+[24-Mar-2024 09:40:24 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1711273224_transcribe-audio-and-do-video-transcription.jpg): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[24-Mar-2024 09:40:24 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpnqu3qT' to '../../cover_images/1711273224_transcribe-audio-and-do-video-transcription.jpg' in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[25-Mar-2024 05:35:48 UTC] PHP Warning:  unlink(../../cover_images/1711273224_transcribe-audio-and-do-video-transcription.jpg): No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 80
+[25-Mar-2024 05:35:48 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1711344948_florist.jpg): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[25-Mar-2024 05:35:48 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php3AMGkb' to '../../cover_images/1711344948_florist.jpg' in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
