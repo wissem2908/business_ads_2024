@@ -79,7 +79,7 @@ $website=$_SERVER['SERVER_NAME'];
                    
                 </ul>
                
-                <a href="admin/"  class="btn btn-brand ms-lg-3">Login</a>
+                <a href="login.php"  class="btn btn-brand ms-lg-3">Login</a>
                  <a href="register.php"  class="btn btn-brand ms-lg-3">Register</a>
             </div>
         </div>

@@ -211,6 +211,18 @@ if($_SESSION['role']=='user'){
 						</ul>
 
                     </li>
+
+					<li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
+			 <i class="fas fa-users"></i>
+							<span class="nav-text">Other Users</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="other_users_list.php">User List</a></li>
+							<li><a href="add_other_user.php">Add User</a></li>
+								
+						</ul>
+
+                    </li>
 					<?php } ?>
 					<?php if($_SESSION['role']=='admin'){ ?>
              <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">

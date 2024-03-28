@@ -170,7 +170,7 @@ $(function () {
   });
              
              $('input[name="phone_number"]').on("keyup", function(e, countryData) {
-                      phone_number = iti.getNumber();
+                      phone_number =  e.target.value;
                      console.log(phone_number);   
              });
              
@@ -221,7 +221,9 @@ $(function () {
   });
          
          $('input[name="whatsapp_number"]').on("keyup", function(e, countryData) {
-              whatsapp_number = iti1.getNumber();
+             // whatsapp_number = iti1.getNumber();
+             whatsapp_number =  e.target.value;
+            
              console.log(whatsapp_number);   
          });
          
