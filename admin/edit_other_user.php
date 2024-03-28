@@ -136,10 +136,10 @@ console.log("password"+passwordR)
 console.log("user"+user_id)
 
 $.ajax({
-  url:'assets/php/reset_password.php',
+  url:'assets/php/reset_password_other_user.php',
   async:false,
   method:'post',
-  data:{user_id:user_id,password:passwordR},
+  data:{id_user:user_id,password:passwordR},
   success:function(response){
     console.log(response)
 
