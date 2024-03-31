@@ -90,7 +90,7 @@ $.ajax({
 				list_data+=' <tr><td>'+
 				data[i]["first_name"]+' '+data[i]["last_name"]+'</td><td><a href="//'+host+'/'+data[i]["username"]+'" target="_blank"><i class="fas fa-external-link-alt"></i></a></td> <td>'+data[i]["email"]+'</td><td>'+data[i]["username"]+
 				'</td><td>'+status+
-				'</td><td><a id="get_ads" href="list_ads_admin.php?user_id='+
+				'</td><td><a id="get_ads" href="list_gen_user_ads_admin.php?user_id='+
 				data[i]["id_user"]+
 				'" class="btn btn-primary shadow btn-xs  me-1">Ads</a></td><td><div class="d-flex"><a id="update_user" href="edit_other_user.php?user_id='+
 				data[i]["id_user"]+
