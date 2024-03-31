@@ -1,11 +1,11 @@
 <?php
 $to = $email;
-$subject = "ads.com.au";
+$subject = "bizads.au";
 
 $message = "
 <html>
 <head>
-<title>ads.com.au</title>
+<title>bizads.au</title>
 </head>
 <body>
 <div style='background:#fff;width:100%;padding:20px'>
@@ -15,10 +15,10 @@ $message = "
 <p>Username:".$username."</p>
 
 <p>Password: ".$password_user."</p>
-<p>To log into your account please click on this link https://ads.com.au/admin/</p>
+<p>To log into your account please click on this link https://bizads.au/login.php</p>
 <br/>
 <p>Kind regards,</p>
-<p>Customer Support (ads.com.au) </p>
+<p>Customer Support (bizads.au) </p>
 </div>
 </body>
 </html>
@@ -37,19 +37,20 @@ $message = "
 include('smtp/PHPMailerAutoload.php');
 
 
+
 function smtp_mailer($to,$subject, $message){
 	$mail = new PHPMailer(); 
-	//$mail->SMTPDebug  = 3;
+	//$mail->SMTPDebug  = 2;
 	$mail->IsSMTP(); 
 	$mail->SMTPAuth = true; 
 	$mail->SMTPSecure = 'ssl'; 
-	$mail->Host = "mail.ads.com.au";
+	$mail->Host = "mail.bizads.au";
 	$mail->Port = 465; 
 	$mail->IsHTML(true);
 	$mail->CharSet = 'UTF-8';
-	$mail->Username = "admin@ads.com.au";
-	$mail->Password = "}b[]!Pxr##m7";
-	$mail->SetFrom("admin@ads.com.au");
+	$mail->Username = "admin@bizads.au";
+	$mail->Password = "bhjJtI4Rptrt1";
+	$mail->SetFrom("admin@bizads.au");
 	$mail->Subject = $subject;
 	$mail->Body =$message;
 	$mail->AddAddress($to);

@@ -214,11 +214,11 @@ if($_SESSION['role']=='user'){
 
 					<li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 			 <i class="fas fa-users"></i>
-							<span class="nav-text">Other Users</span>
+							<span class="nav-text">General Users</span>
 						</a>
                         <ul aria-expanded="false">
-							<li><a href="other_users_list.php">User List</a></li>
-							<li><a href="add_other_user.php">Add User</a></li>
+							<li><a href="other_users_list.php">General User List</a></li>
+							<li><a href="add_other_user.php">Add General User</a></li>
 								
 						</ul>
 

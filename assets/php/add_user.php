@@ -1,5 +1,6 @@
 <?php
-
+error_reporting(E_ALL); 
+ini_set('display_errors', 1);
 include 'config.php';
 
 
@@ -17,7 +18,10 @@ function generateUsername($name) {
 }
 
 
-
+function generateConfirmationCode() {
+    return md5(uniqid(rand(), true));
+}
+$confirmationCode = generateConfirmationCode();
 
 
 
@@ -54,23 +58,21 @@ if(!isset($_POST['first_name']) || $_POST['first_name']=="" || !isset($_POST['la
             }
 
 
-            $req = $bdd->prepare('INSERT INTO `normal_users`(`username`,`first_name`, `last_name`, `email`, `mobile_number`, `creation_date`) VALUES (?,?,?,?,?,NOW())');
-            $req->execute(array($generatedUsername,$first_name,$last_name,$email,$mobile_number));
+            $req = $bdd->prepare('INSERT INTO `normal_users`(`username`,`first_name`, `last_name`, `email`, `mobile_number`, `creation_date`,confirmationCode) VALUES (?,?,?,?,?,NOW(),?)');
+            $req->execute(array($generatedUsername,$first_name,$last_name,$email,$mobile_number,$confirmationCode));
                   
         
         
-      echo json_encode(array("reponse"=>"true"));
+  
 
       /****************************************************************************************************** */
       require_once '../../admin/assets/php/smtp/PHPMailerAutoload.php';
 
-      function generateConfirmationCode() {
-          return md5(uniqid(rand(), true));
-      }
-      
+
+     // echo $confirmationCode;
       $to = $email;
       $subject = 'Confirm Your Account';
-      $confirmLink = 'http://example.com/confirm.php?code=' . $confirmationCode;
+      $confirmLink = 'https://bizads.au/assets/php/confirm.php?code=' . $confirmationCode;
       $message = "
       <html>
       <head>
@@ -95,35 +97,9 @@ if(!isset($_POST['first_name']) || $_POST['first_name']=="" || !isset($_POST['la
      
       
       
-      function smtp_mailer($to,$subject, $message){
-          $mail = new PHPMailer(); 
-          //$mail->SMTPDebug  = 3;
-          $mail->IsSMTP(); 
-          $mail->SMTPAuth = true; 
-          $mail->SMTPSecure = 'ssl'; 
-          $mail->Host = "mail.ads.com.au";
-          $mail->Port = 465; 
-          $mail->IsHTML(true);
-          $mail->CharSet = 'UTF-8';
-          $mail->Username = "wis@bizads.au";
-          $mail->Password = "29081996wissem";
-          $mail->SetFrom("wis@bizads.au");
-          $mail->Subject = $subject;
-          $mail->Body =$message;
-          $mail->AddAddress($to);
-          $mail->SMTPOptions=array('ssl'=>array(
-              'verify_peer'=>false,
-              'verify_peer_name'=>false,
-              'allow_self_signed'=>true
-          ));
-          if(!$mail->Send()){
-              echo $mail->ErrorInfo;
-          }else{
-              //return 'Sent';
-          }
-       }
-        echo smtp_mailer($to,$subject,$message);  
-
+     
+ echo smtp_mailer($to,$subject,$message);  
+ echo json_encode(array("reponse"=>"true"));
 
 }
 
@@ -133,4 +109,34 @@ if(!isset($_POST['first_name']) || $_POST['first_name']=="" || !isset($_POST['la
           
          
         }
+
+
+        function smtp_mailer($to,$subject, $message){
+            $mail = new PHPMailer(); 
+            //$mail->SMTPDebug  = 2;
+            $mail->IsSMTP(); 
+            $mail->SMTPAuth = true; 
+            $mail->SMTPSecure = 'ssl'; 
+            $mail->Host = "mail.bizads.au";
+            $mail->Port = 465; 
+            $mail->IsHTML(true);
+            $mail->CharSet = 'UTF-8';
+            $mail->Username = "admin@bizads.au";
+            $mail->Password = "bhjJtI4Rptrt1";
+            $mail->SetFrom("admin@bizads.au");
+            $mail->Subject = $subject;
+            $mail->Body =$message;
+            $mail->AddAddress($to);
+            $mail->SMTPOptions=array('ssl'=>array(
+                'verify_peer'=>false,
+                'verify_peer_name'=>false,
+                'allow_self_signed'=>true
+            ));
+            if(!$mail->Send()){
+                echo $mail->ErrorInfo;
+            }else{
+                //return 'Sent';
+            }
+         }
+               
 ?>

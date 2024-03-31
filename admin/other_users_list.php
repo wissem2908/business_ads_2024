@@ -7,16 +7,16 @@ include 'includes/header.php';
             <div class="container-fluid">
                     <div class="row page-titles">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Other Users</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">Other Users List</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">General Users</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">General Users List</a></li>
                     </ol>
                 </div>
                <div class="row">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Other Users List</h4>
-                                <a href="add_user.php" type="button" class="btn btn-outline-primary">Add Other User</a>
+                                <h4 class="card-title">General Users List</h4>
+                                <a href="add_user.php" type="button" class="btn btn-outline-primary">Add General User</a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
