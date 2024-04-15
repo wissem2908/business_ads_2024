@@ -74,16 +74,16 @@ $user_id=$_GET['user_id'];
                                 <label class="form-label">State<span class="text-danger required" > *required</span></label>
                                 <select class="form-control input-default" name="state" id="state" style="-webkit-appearance: none; -moz-appearance: none; appearance: none; background-image: url('data:image/svg+xml,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; viewBox=&quot;0 0 16 16&quot;&gt;%3Cpath fill=&quot;none&quot; stroke=&quot;%23343a40&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; stroke-width=&quot;2&quot; d=&quot;M2 6l6 6 6-6&quot;%3E%3C/path%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right 0.5rem bottom 0.5rem; padding-right: 1.5rem;">
                                     <option disabled selected>Select...</option>
-                                    <option value="ACT">Australian Capital Territory</option>
-                                    <option value="NSW">New South Wales</option>
-                                    <option value="NT">Northern Territory</option>
-                                    <option value="QLD">Queensland</option>
-                                    <option value="SA">South Australia</option>
-                                    <option value="TAS">Tasmania</option>
-                                    <option value="VIC">Victoria</option>
-                                    <option value="WA">Western Australia</option>
-                                    <option value="australia">Australia</option>
-                                    </select>
+  <option value="ACT">Australian Capital Territory</option>
+  <option value="NSW">New South Wales</option>
+  <option value="NT">Northern Territory</option>
+  <option value="QLD">Queensland</option>
+  <option value="SA">South Australia</option>
+  <option value="TAS">Tasmania</option>
+  <option value="VIC">Victoria</option>
+  <option value="WA">Western Australia</option>
+  <option value="australia">Australia</option>
+</select>
 
                                         </div>
                                         <div class="mb-3 col-lg-6 col-md-12">

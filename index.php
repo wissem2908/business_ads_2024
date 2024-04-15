@@ -90,6 +90,27 @@ text-decoration: none;
            
         </div>
     </section>
+
+
+    <section id="advertisers" class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="intro">
+                        
+                        <h1>Latest News</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        
+            <div class="row g-4" id="latest_news">
+           
+           
+            </div>
+           
+        </div>
+    </section>
     <style>
 </style>
 <?php

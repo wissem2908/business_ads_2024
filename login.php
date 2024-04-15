@@ -6,7 +6,7 @@ if(isset($_SESSION['login']) && $_SESSION['login']=="yes"){
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en" class="h-100">
 
 <head>
@@ -22,10 +22,10 @@ if(isset($_SESSION['login']) && $_SESSION['login']=="yes"){
 	<meta property="og:image" content="https://fillow.dexignlab.com/xhtml/social-image.png">
 	<meta name="format-detection" content="telephone=no">
 	
-	<!-- PAGE TITLE HERE -->
+
 	<title>Business Ads | Login</title>
 	
-	<!-- FAVICONS ICON -->
+	
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link href="admin/css/style.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="admin/vendor/sweetalert2/sweetalert2.min.css">
@@ -70,7 +70,7 @@ if(isset($_SESSION['login']) && $_SESSION['login']=="yes"){
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
     <!--**********************************

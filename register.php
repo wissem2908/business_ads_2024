@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
-<head>
+<!-- <head>
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="keywords" content="">
@@ -18,10 +18,9 @@
 
 
     </style>
-	<!-- PAGE TITLE HERE -->
-	<title>Admin Dashboard</title>
 	
-	<!-- FAVICONS ICON -->
+	<title>Admin Dashboard</title>
+
 	<link rel="shortcut icon" type="image/png" href="images/favicon.png">
     <link href="admin/css/style.css" rel="stylesheet">
 
@@ -80,7 +79,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 <!--**********************************
 	Scripts

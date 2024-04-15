@@ -31,7 +31,7 @@ $(document).ready(function(){
     list+='<tr><td><img class="rounded-circle" width="40" src="ads_images/'+data[i]["ad_image"]+'" alt=""></td><td>'+
     data[i].ad_title+'</td><td>'+
     description+'</td><td>'+
-    status+'</td><td>'+data[i].creation_date+'</td><td><div class="d-flex"><a id="update_ads" href="edit_ads.php?ads_id='+
+    status+'</td><td>'+data[i].creation_date+'</td><td><div class="d-flex"><a id="update_ads" href="edit_gen_user_ads.php?ads_id='+
                     data[i]["ads_id"]+'" class="btn btn-primary shadow btn-xs sharp me-1" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Ad"><i class="fas fa-pencil-alt"></i></a><a id="delete_ad" data="'+
                     data[i]["ads_id"]+
                     '" href="#" class="btn btn-danger shadow btn-xs sharp me-1 " data-bs-toggle="tooltip" data-bs-placement="top" title="Delete Ad"><i class="fa fa-trash"></i></a><a id="copy_ad" data="'+

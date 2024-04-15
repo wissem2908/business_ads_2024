@@ -1,0 +1,8 @@
+[26-Mar-2024 10:22:19 UTC] PHP Warning:  include(../../admin/smtp/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:22:19 UTC] PHP Warning:  include(../../admin/smtp/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:22:19 UTC] PHP Warning:  include(): Failed opening '../../admin/smtp/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:24:12 UTC] PHP Warning:  include(../../admin/smtp/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:24:12 UTC] PHP Warning:  include(../../admin/smtp/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:24:12 UTC] PHP Warning:  include(): Failed opening '../../admin/smtp/PHPMailerAutoload.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:26:35 UTC] PHP Warning:  require_once(../../admin/smtp/PHPMailerAutoload.php): failed to open stream: No such file or directory in /home/bizadsau/public_html/assets/php/add_user.php on line 65
+[26-Mar-2024 10:26:35 UTC] PHP Fatal error:  require_once(): Failed opening required '../../admin/smtp/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/bizadsau/public_html/assets/php/add_user.php on line 65

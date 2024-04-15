@@ -36,3 +36,18 @@ Stack trace:
 [25-Mar-2024 05:35:48 UTC] PHP Warning:  unlink(../../cover_images/1711273224_transcribe-audio-and-do-video-transcription.jpg): No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 80
 [25-Mar-2024 05:35:48 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1711344948_florist.jpg): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
 [25-Mar-2024 05:35:48 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/php3AMGkb' to '../../cover_images/1711344948_florist.jpg' in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[31-Mar-2024 10:26:12 UTC] PHP Warning:  unlink(../../ads_images/1681804287_flowers-276014_1280.jpg): No such file or directory in /home/bizadsau/public_html/admin/assets/php/delete_gen_user_ad.php on line 20
+[08-Apr-2024 01:28:59 UTC] PHP Warning:  unlink(../../cover_images/1711344948_florist.jpg): No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 80
+[08-Apr-2024 01:28:59 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1712539739_blog1.jpg): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[08-Apr-2024 01:28:59 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpZpwg8j' to '../../cover_images/1712539739_blog1.jpg' in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[08-Apr-2024 06:16:08 UTC] PHP Warning:  unlink(../../cover_images/1712539739_blog1.jpg): No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 80
+[08-Apr-2024 06:16:08 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1712556968_adscover2.jpg): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[08-Apr-2024 06:16:08 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpb7wWRg' to '../../cover_images/1712556968_adscover2.jpg' in /home/bizadsau/public_html/admin/assets/php/edit_user.php on line 95
+[13-Apr-2024 11:15:25 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[13-Apr-2024 11:15:30 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[13-Apr-2024 11:15:34 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[13-Apr-2024 11:15:49 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[13-Apr-2024 11:16:16 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[13-Apr-2024 11:16:43 UTC] PHP Warning:  unlink(../../logo_images/): Is a directory in /home/bizadsau/public_html/admin/assets/php/delete_user.php on line 19
+[14-Apr-2024 12:22:38 UTC] PHP Warning:  move_uploaded_file(../../cover_images/1713097358_2021-login-form.png): failed to open stream: No such file or directory in /home/bizadsau/public_html/admin/assets/php/add_users.php on line 103
+[14-Apr-2024 12:22:38 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpa6nipJ' to '../../cover_images/1713097358_2021-login-form.png' in /home/bizadsau/public_html/admin/assets/php/add_users.php on line 103

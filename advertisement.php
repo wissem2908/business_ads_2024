@@ -54,7 +54,7 @@ body{
             <div class="card  mx-auto ">
             
                     <div class="card-body">
-                                <a id="logo_url"> <img  id="user_img" style="width:200px;height: 200px;" class="rounded-circle" ></a>
+                                <a id="logo_url"> <img  id="user_img" style="width:200px;height: 200px;" class="" ></a>
                                 <br><br>
                                 <p class="title"> <span id="business_name"> </span></p>
                                 <p id="user_link"></p>

@@ -78,7 +78,46 @@ if(adsObj.includes(data[i].ads_id))
 
 
 
+ function latestNews(){
+    $.ajax({
+        url:'assets/php/latest_news.php',
+        method:'post',
+        async:false,
+        success:function(response){
+          
+            
+				var data = JSON.parse(response)
 
+                console.log(data)
+				if(data.reponse=="true"){
+
+				
+
+
+					data = data.list
+					var listBlog=""
+					for(i=0;i<data.length;i++){
+								var description=""
+					if(data[i].blog_desc.length>100){
+						description=data[i].blog_desc.substring(0,100)+'...'
+											}else{
+												description=data[i].blog_desc
+											}
+
+
+listBlog+='  <div class="col-md-3"> <br/><article class="blog-post"> <img src="admin/blog_images/'+
+data[i].blog_image+'" alt=""><div class="content"> <small>'+
+data[i].date_creation+'</small><h5>'+data[i].blog_title+'</h5> <p> '+
+description+'</p><a href="blog_details.php?id_blog='+data[i].id_blog+'" class=" btn btn-brand back-btn float-end">Read more</a> </div> </article></div>'
+					}
+
+					$('#latest_news').append(listBlog)
+				}
+        }
+    })
+ }
+
+latestNews()
 
    
 })

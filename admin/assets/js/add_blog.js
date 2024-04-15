@@ -32,6 +32,13 @@ $(document).ready(function(){
                                 text: 'Enter required fields!',
                                 
                               })
+                          }   if(data.reponse=="false" && data.message==3){
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'Image should be jpeg, jpg,png or gif format!',
+                                
+                              })
                           }
                           
                           else if(data.reponse=="true" ){

@@ -218,7 +218,7 @@ if($_SESSION['role']=='user'){
 						</a>
                         <ul aria-expanded="false">
 							<li><a href="other_users_list.php">General User List</a></li>
-							<li><a href="add_other_user.php">Add General User</a></li>
+							<li><a href="add_gen_user.php">Add General User</a></li>
 								
 						</ul>
 
@@ -295,11 +295,24 @@ if($_SESSION['role']=='user'){
 						</a>
 					</li>
 					<?php } ?>
+					<?php if($_SESSION['role']=='admin' || $_SESSION['role']=='user'){ ?>
    <li><a href="profile.php" class="" aria-expanded="false">
    <i class="fas fa-id-card"></i>
 							<span class="nav-text">Profile</span>
 						</a>
 					</li>
+					
+					<?php } ?>
+					<?php if($_SESSION['role']!='admin' && $_SESSION['role']!='user'){ ?>
+
+						<li><a href="gen_user_profile.php" class="" aria-expanded="false">
+   <i class="fas fa-id-card"></i>
+							<span class="nav-text">Profile</span>
+						</a>
+					</li>
+
+						<?php } ?>
+						
 					<?php if($_SESSION['role']=='admin'){ ?>
              <li><a class="has-arrow " href="javascript:void()" aria-expanded="false">
 			 <i class="fas fa-file"></i>
