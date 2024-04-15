@@ -1,152 +1,28 @@
 <?php
 session_start();
-
-
-
 $website=$_SERVER['SERVER_NAME'];
+
+include ('includes/header_1.php');
 ?>
 <!doctype html>
 <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/style.css">
 
-    <title>Ads from businesses direct to you</title>
-    <style>
-#website:first-letter {
-   /* text-transform: uppercase;*/
-}
-.slide1 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.slide2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-.users{
-    display: block;
-}
-.latest_ads{
- 
- padding: 32px;
- background-color: #fff;
- box-shadow: var(--shadow);
-}
-.heart{
-color:red;
-}
-
-#pagination-container,#pagination-container_ads{
-padding:0;
-list-style:none;
-text-align:center;
-margin-left: 10px;
-display: inline-flex;
-
-}#pagination-container li{
-display: inline-block !important;
-margin:2px;
-}
-#pagination-container  a, #pagination-container  span ,#pagination-container_ads a,#pagination-container_ads span{
-display: inline-block !important;
-margin:2px;
-
-width:40px;
-height: 40px;
-line-height: 40px;
-text-align: center;
-background-color: #fff;
-text-decoration: none;
-color:#252525;
-border-radius:4px;
-margin:5px;
-box-shadow:inset 0 5px;
-}
-#pagination-container .current , #pagination-container_ads .current{
-color: #fff;
-background-color: #000;
-border-color:rgb(255,255,255);
-border:1px solid;
-cursor:pointer;
-}
-#pagination-container .prev.current ,#pagination-container_ads .prev.current{
-background:#222;
-border:none;
-}
-.text-wrap{
-word-wrap: break-word !important;
- word-break: break-word !important;
-}
-.nav-tabs .nav-item {
-    width: 100% !important;
-}
-    </style>
-</head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70">
-    <!-- BOTTOM NAV -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="/" id="website"></a><img src="./img/logo.png" style='width:150px;'/>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
-                    </li>
-                  
-                    <li class="nav-item">
-                        <a class="nav-link" href="advertisers.php">Advertisers</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.php">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="follow.php">Following</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target='_blank' href="map.php">Map</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" target='_blank' href="wanted.php">Wanted</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact</a>
-                    </li>
-                   
-                </ul>
-               
-                <a href="login.php"  class="btn btn-brand ms-lg-3">Login</a>
-                 <a href="register.php"  class="btn btn-brand ms-lg-3">Register</a>
-            </div>
-        </div>
-    </nav>
+  
 
 <?php
 if(!isset($_SESSION['login'])  ){
 
   ?>
-<h3 style="height:90vh; margin:170px;">Access to viewing these ads is limited to Business Advertisers Please <a href="admin/">Log in</a></h3>
+  <div  style="height:90vh; margin:170px;">
+  <p style="text-align: center;">Access to viewing the &quot;Wanted&quot; ads is restricted to businesses advertising on this website.</p>
+<p style="text-align: center;"><br></p>
+<p style="text-align: center;">If you would like to place a wanted ad please register <a href="admin/register.php">here</a>.</p>
+<!-- <h3 style="height:90vh; margin:170px;">Access to viewing these ads is limited to Business Advertisers Please <a href="admin/">Log in</a></h3> -->
+  
+</div>
   <?php
   
 }else{
